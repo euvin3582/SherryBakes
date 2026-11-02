@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sherry Bakes — Healthy Baking Made Lovely</title>
+  <meta name="description" content="Healthy baking with avocado, rice flour and gluten-free ingredients. Breads, muffins, brownies and more.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=Nunito:wght@400;600;700&family=Caveat:wght@600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header class="nav">
+    <a href="#" class="logo">Sherry<span>Bakes</span></a>
+    <nav>
+      <a href="#recipes">Recipes</a>
+      <a href="#bakers">Our Bakers</a>
+      <a href="#pantry">Healthy Swaps</a>
+      <a href="#recipes" class="btn btn-small">Start Baking</a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-text">
+      <p class="script">Hello, lovely!</p>
+      <h1>Healthy baking that feels like a <em>warm hug</em></h1>
+      <p class="lede">Avocado banana bread, soft rice flour loaves and gluten-free treats. Real ingredients, simple steps, and no guilt.</p>
+      <div class="hero-cta">
+        <a href="#recipes" class="btn">Find a Recipe</a>
+        <a href="#bakers" class="btn btn-soft">Meet Our Bakers</a>
+      </div>
+      <ul class="badges">
+        <li>🥑 Avocado-powered</li>
+        <li>🌾 Gluten-free</li>
+        <li>🍯 Naturally sweet</li>
+      </ul>
+    </div>
+    <div class="hero-visual">
+      <span class="blob blob-1"></span>
+      <span class="blob blob-2"></span>
+      <figure class="hero-img photo" data-label="Hero baker">
+        <img src="images/hero.jpg" alt="Smiling baker in an apron holding a tray of fresh cookies">
+      </figure>
+      <div class="float-card">
+        <strong>8</strong> healthy recipes<br><span>all gluten-free 💕</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- RIBBON -->
+  <div class="ribbon" aria-hidden="true">
+    <div class="ribbon-track">
+      <span>Avocado</span>♡<span>Brown Rice Flour</span>♡<span>Gluten-Free</span>♡<span>Less Sugar</span>♡<span>Whole Ingredients</span>♡<span>Baked with Love</span>♡
+      <span>Avocado</span>♡<span>Brown Rice Flour</span>♡<span>Gluten-Free</span>♡<span>Less Sugar</span>♡<span>Whole Ingredients</span>♡<span>Baked with Love</span>♡
+    </div>
+  </div>
+
+  <!-- RECIPES -->
+  <section id="recipes" class="section">
+    <div class="section-head">
+      <p class="script">fresh from our oven</p>
+      <h2>Healthy bakes you'll <em>fall in love with</em></h2>
+    </div>
+    <div class="filters">
+      <button class="chip active" data-filter="all">All</button>
+      <button class="chip" data-filter="avocado">🥑 Avocado</button>
+      <button class="chip" data-filter="rice">🍚 Rice</button>
+      <button class="chip" data-filter="gluten-free">🌾 Gluten-Free</button>
+      <button class="chip" data-filter="bread">🍞 Breads</button>
+      <button class="chip" data-filter="sweet">🧁 Sweet</button>
+    </div>
+    <div id="recipe-grid" class="grid"></div>
+  </section>
+
+  <!-- BAKERS -->
+  <section id="bakers" class="section tinted">
+    <div class="section-head">
+      <p class="script">the faces behind the flour</p>
+      <h2>Meet our <em>bakers</em></h2>
+    </div>
+    <div class="bakers">
+      <article class="baker">
+        <figure class="photo" data-label="Baker 1"><img src="images/baker-1.jpg" alt="Sherry smiling beside a cake on a stand in her kitchen"></figure>
+        <h3>Sherry</h3>
+        <p class="role">Founder · Avocado Lover</p>
+        <p>Started swapping butter for avocado ten years ago, and her family never noticed.</p>
+      </article>
+      <article class="baker">
+        <figure class="photo" data-label="Baker 2"><img src="images/baker-2.jpg" alt="Maya arranging fresh bread in the bakery"></figure>
+        <h3>Maya</h3>
+        <p class="role">Bread Lead · Gluten-Free Queen</p>
+        <p>Proves that rice flour bread can be soft, fluffy and perfect for sandwiches.</p>
+      </article>
+      <article class="baker">
+        <figure class="photo" data-label="Baker 3"><img src="images/baker-3.jpg" alt="Marco smiling in a red apron"></figure>
+        <h3>Marco</h3>
+        <p class="role">Pastry · Sweet Without the Sugar Crash</p>
+        <p>Dates, bananas and dark chocolate are his secret weapons.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- PANTRY -->
+  <section id="pantry" class="section">
+    <div class="pantry-wrap">
+      <figure class="photo pantry-img" data-label="Avocado"><img src="images/pantry-avocado.jpg" alt="Avocado halves and a fresh bun on a wooden table"></figure>
+      <div>
+        <p class="script">little swaps, big difference</p>
+        <h2 class="h2">Our favorite <em>healthy swaps</em></h2>
+        <div class="pantry">
+          <div class="swap"><span class="big">🥑</span><div><h4>Avocado for butter</h4><p>Swap 1:1. It's lower in saturated fat, higher in fiber, and gives an extra-moist crumb.</p></div></div>
+          <div class="swap"><span class="big">🍚</span><div><h4>Brown rice flour</h4><p>A mild, nutty base for gluten-free breads. Mix it with tapioca starch for a light texture.</p></div></div>
+          <div class="swap"><span class="big">🌱</span><div><h4>Psyllium husk</h4><p>The secret to gluten-free bread that holds together and slices beautifully.</p></div></div>
+          <div class="swap"><span class="big">🍌</span><div><h4>Fruit as sweetener</h4><p>Ripe bananas, dates and applesauce let you cut sugar in half.</p></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <a href="#" class="logo">Sherry<span>Bakes</span></a>
+    <p>Baked with love &amp; avocados · © 2026</p>
+    <p class="powered">Powered by <a href="https://www.tildawavesystems.com" target="_blank" rel="noopener">TildaWave Systems</a></p>
+    <p class="small">Always check labels: oats and some flours can contain traces of gluten.</p>
+  </footer>
+
+  <dialog id="recipe-modal">
+    <button class="close" aria-label="Close">×</button>
+    <div id="modal-body"></div>
+  </dialog>
+
+  <script src="recipes.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
