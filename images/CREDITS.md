@@ -17,5 +17,14 @@ All photos are from Unsplash (https://unsplash.com) and free to use under the Un
 | sweet-potato-rice-rolls.jpg | photo-1597528662465-55ece5734101 |
 | avocado-pistachio-cake.jpg | photo-1716579862099-acd0967de37b |
 | pantry-avocado.jpg | photo-1550413074-0208fb290cb9 |
+| ads/family-field.jpg | photo-1542037104857-ffbb0b9155fb |
+| ads/grandma-hug.jpg | photo-1593100126453-19b562a800c1 |
+| ads/mom-daughter.jpg | photo-1589169011402-8b2cbd1ee593 |
+| ads/dad-hug.jpg | photo-1624272864537-8ecc72b67958 |
+| ads/baking-together.jpg | photo-1752652015620-6a30c5bf4734 |
+| ads/grandpa-baby.jpg | photo-1742696405936-fe5ef4f37b4b |
+| ads/beach-family.jpg | photo-1772305436753-e308844ecda2 |
+| ads/garden-family.jpg | photo-1761839258657-457dda39b5cc |
+| ads/healthy-walk.jpg | photo-1770510314428-23b461af2007 |
 
 To swap a photo, replace the file and keep the same filename.

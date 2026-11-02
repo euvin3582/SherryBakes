@@ -1,0 +1,18 @@
+# Sherry Bakes: compression and caching for HostGator (Apache). The build copies this into dist/.
+# If the server folder already has a .htaccess (cPanel adds lines such as "php -- BEGIN cPanel-generated
+# handler"), keep those lines and add these below them instead of replacing the file.
+
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css text/javascript application/javascript application/json image/svg+xml
+</IfModule>
+
+<IfModule mod_headers.c>
+  # Photos: keep for 30 days
+  <FilesMatch "\.(jpe?g|png|webp|svg)$">
+    Header set Cache-Control "public, max-age=2592000"
+  </FilesMatch>
+  # Pages, styles, scripts and the form's PHP: always check for a newer version
+  <FilesMatch "\.(html|css|js|php)$">
+    Header set Cache-Control "no-cache"
+  </FilesMatch>
+</IfModule>

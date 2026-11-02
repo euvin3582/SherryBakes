@@ -147,3 +147,6 @@ vite.config.ts.timestamp-*
 
 # Turbo Repo
 .turbo
+
+# Database login: lives in the hosting account home folder, never in the repo
+/lead-config.php

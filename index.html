@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=Nunito:wght@400;600;700&family=Caveat:wght@600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="leads.css">
 </head>
 <body>
 
@@ -75,6 +76,12 @@
     <div id="recipe-grid" class="grid"></div>
   </section>
 
+  <aside class="ad-slot" aria-label="Advertisement">
+    <button type="button" class="ad-feature" data-ad-slot="between-recipes" data-ad-source="between-recipes">
+      <span class="ad-text"><span class="ad-kicker">For the people you love</span><span class="ad-title">You take care of your health. Who takes care of them?</span><span class="ad-cta">Get my free quote &rarr;</span></span>
+    </button>
+  </aside>
+
   <!-- BAKERS -->
   <section id="bakers" class="section tinted">
     <div class="section-head">
@@ -103,6 +110,12 @@
     </div>
   </section>
 
+  <aside class="ad-slot" aria-label="Advertisement">
+    <button type="button" class="ad-feature" data-ad-slot="between-bakers" data-ad-source="between-bakers">
+      <span class="ad-text"><span class="ad-kicker">Peace of mind</span><span class="ad-title">Bake for them today. Protect them tomorrow.</span><span class="ad-cta">Get my free quote &rarr;</span></span>
+    </button>
+  </aside>
+
   <!-- PANTRY -->
   <section id="pantry" class="section">
     <div class="pantry-wrap">
@@ -120,12 +133,180 @@
     </div>
   </section>
 
+  <aside class="ad-slot ad-slot-last" aria-label="Advertisement">
+    <button type="button" class="ad-feature" data-ad-slot="between-pantry" data-ad-source="between-pantry">
+      <span class="ad-text"><span class="ad-kicker">Plan ahead</span><span class="ad-title">The best time to get covered is before you need it.</span><span class="ad-cta">Get my free quote &rarr;</span></span>
+    </button>
+  </aside>
+
   <footer class="footer">
     <a href="#" class="logo">Sherry<span>Bakes</span></a>
     <p>Baked with love &amp; avocados · © 2026</p>
     <p class="powered">Powered by <a href="https://www.tildawavesystems.com" target="_blank" rel="noopener">TildaWave Systems</a></p>
     <p class="small">Always check labels: oats and some flours can contain traces of gluten.</p>
+    <p class="small">Sponsored insurance offers are provided by Mid-Atlantic Insurance Group LLC and its licensed agents. Sherry Bakes is not an insurance company.</p>
   </footer>
+
+  <div class="lead-toast" id="lead-toast" role="status" aria-live="polite" hidden>
+    <span>💕 Your information was sent. A licensed agent will contact you soon.</span>
+    <button type="button" aria-label="Close notification">×</button>
+  </div>
+
+  <dialog id="lead-modal" class="lead-modal" aria-labelledby="leadTitle">
+    <div class="lead-head">
+      <div>
+        <p class="script">protect what matters most</p>
+        <h2 id="leadTitle">Get your free quote</h2>
+      </div>
+      <button type="button" class="lead-close" aria-label="Close">×</button>
+    </div>
+    <div class="lead-body">
+      <form id="leadForm" novalidate>
+        <p class="lead-intro">Tell us how to reach you. A licensed agent will contact you to explain your options. No cost, no obligation.</p>
+        <input type="hidden" name="source" id="lead-source">
+        <div class="visually-hidden" aria-hidden="true">
+          <label for="lead-website-check">Leave this field blank</label>
+          <input id="lead-website-check" name="websiteCheck" tabindex="-1" autocomplete="off">
+        </div>
+        <div class="lead-grid">
+          <div class="field">
+            <label for="lead-first">First name</label>
+            <input id="lead-first" name="firstName" autocomplete="given-name" maxlength="50" required>
+            <div class="invalid-feedback">Enter your first name.</div>
+          </div>
+          <div class="field">
+            <label for="lead-last">Last name</label>
+            <input id="lead-last" name="lastName" autocomplete="family-name" maxlength="50" required>
+            <div class="invalid-feedback">Enter your last name.</div>
+          </div>
+          <div class="field">
+            <label for="lead-gender">Gender</label>
+            <select id="lead-gender" name="gender" autocomplete="sex" required>
+              <option value="" selected disabled>Choose&hellip;</option>
+              <option value="female">Female</option>
+              <option value="male">Male</option>
+            </select>
+            <div class="invalid-feedback">Choose your gender.</div>
+          </div>
+          <div class="field">
+            <label for="lead-phone">Phone number</label>
+            <input id="lead-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel-national" placeholder="(555) 123-4567" required>
+            <div class="invalid-feedback">Enter a 10-digit phone number.</div>
+          </div>
+          <div class="field span-2">
+            <label for="lead-email">Email address</label>
+            <input id="lead-email" name="email" type="email" autocomplete="email" maxlength="120" placeholder="name@gmail.com" required>
+            <div class="invalid-feedback">Enter a valid email, like name@gmail.com.</div>
+          </div>
+          <div class="field span-2">
+            <label for="lead-city">City</label>
+            <div class="city-box">
+              <input id="lead-city" name="city" autocomplete="address-level2" maxlength="80" placeholder="Choose your state, then type your city" required
+                     role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="lead-city-list">
+              <ul class="city-list" id="lead-city-list" role="listbox" aria-label="Cities" hidden></ul>
+            </div>
+            <div class="invalid-feedback">Enter your city.</div>
+          </div>
+          <div class="field">
+            <label for="lead-state">State</label>
+            <select id="lead-state" name="state" autocomplete="address-level1" required>
+              <option value="" selected disabled>Choose&hellip;</option>
+              <option value="AL">Alabama</option><option value="AK">Alaska</option><option value="AZ">Arizona</option><option value="AR">Arkansas</option><option value="CA">California</option><option value="CO">Colorado</option><option value="CT">Connecticut</option><option value="DE">Delaware</option><option value="DC">District of Columbia</option><option value="FL">Florida</option><option value="GA">Georgia</option><option value="HI">Hawaii</option><option value="ID">Idaho</option><option value="IL">Illinois</option><option value="IN">Indiana</option><option value="IA">Iowa</option><option value="KS">Kansas</option><option value="KY">Kentucky</option><option value="LA">Louisiana</option><option value="ME">Maine</option><option value="MD">Maryland</option><option value="MA">Massachusetts</option><option value="MI">Michigan</option><option value="MN">Minnesota</option><option value="MS">Mississippi</option><option value="MO">Missouri</option><option value="MT">Montana</option><option value="NE">Nebraska</option><option value="NV">Nevada</option><option value="NH">New Hampshire</option><option value="NJ">New Jersey</option><option value="NM">New Mexico</option><option value="NY">New York</option><option value="NC">North Carolina</option><option value="ND">North Dakota</option><option value="OH">Ohio</option><option value="OK">Oklahoma</option><option value="OR">Oregon</option><option value="PA">Pennsylvania</option><option value="RI">Rhode Island</option><option value="SC">South Carolina</option><option value="SD">South Dakota</option><option value="TN">Tennessee</option><option value="TX">Texas</option><option value="UT">Utah</option><option value="VT">Vermont</option><option value="VA">Virginia</option><option value="WA">Washington</option><option value="WV">West Virginia</option><option value="WI">Wisconsin</option><option value="WY">Wyoming</option>
+            </select>
+            <div class="invalid-feedback">Choose your state.</div>
+          </div>
+          <div class="field span-2">
+            <label id="lead-dob-label" for="lead-dob-month">Date of birth</label>
+            <div class="dob-group" role="group" aria-labelledby="lead-dob-label">
+              <select id="lead-dob-month" name="dobMonth" autocomplete="bday-month" aria-label="Birth month" required>
+                <option value="" selected disabled>Month</option><option value="01">January</option><option value="02">February</option><option value="03">March</option><option value="04">April</option><option value="05">May</option><option value="06">June</option><option value="07">July</option><option value="08">August</option><option value="09">September</option><option value="10">October</option><option value="11">November</option><option value="12">December</option>
+              </select>
+              <select id="lead-dob-day" name="dobDay" autocomplete="bday-day" aria-label="Birth day" required>
+                <option value="" selected disabled>Day</option><option value="01">1</option><option value="02">2</option><option value="03">3</option><option value="04">4</option><option value="05">5</option><option value="06">6</option><option value="07">7</option><option value="08">8</option><option value="09">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option><option value="31">31</option>
+              </select>
+              <select id="lead-dob-year" name="dobYear" autocomplete="bday-year" aria-label="Birth year" required>
+                <option value="" selected disabled>Year</option>
+              </select>
+            </div>
+            <input type="hidden" id="lead-dob" name="dob">
+            <div class="invalid-feedback">Choose your date of birth (ages 18&ndash;85).</div>
+          </div>
+          <div class="field">
+            <label for="lead-tobacco">Use tobacco?</label>
+            <select id="lead-tobacco" name="tobacco" required>
+              <option value="" selected disabled>Choose&hellip;</option>
+              <option value="no">No</option>
+              <option value="yes">Yes, including vaping</option>
+            </select>
+            <div class="invalid-feedback">Choose yes or no.</div>
+          </div>
+          <div class="field">
+            <label for="lead-coverage">Coverage amount</label>
+            <select id="lead-coverage" name="coverage" required>
+              <option value="" selected disabled>Choose&hellip;</option>
+              <option value="25000">$25,000</option>
+              <option value="50000">$50,000</option>
+              <option value="100000">$100,000</option>
+              <option value="250000">$250,000</option>
+              <option value="500000">$500,000</option>
+              <option value="1000000">$1,000,000</option>
+            </select>
+            <div class="invalid-feedback">Choose a coverage amount.</div>
+          </div>
+          <div class="field">
+            <label for="lead-health">Overall health</label>
+            <select id="lead-health" name="health" required>
+              <option value="" selected disabled>Choose&hellip;</option>
+              <option value="PP">Excellent</option>
+              <option value="P">Very good</option>
+              <option value="RP">Good</option>
+              <option value="R">Fair</option>
+            </select>
+            <div class="invalid-feedback">Choose how you&rsquo;d rate your health.</div>
+          </div>
+          <div class="field span-all consent">
+            <input type="checkbox" id="lead-consent" name="consent" value="yes" required>
+            <label for="lead-consent">By checking this box, I agree that Mid-Atlantic Insurance Group LLC and its licensed agents may contact me about life insurance at the phone number and email above, including by calls and texts that may use automated technology. Consent is not a condition of purchase. Message and data rates may apply. I can opt out at any time.</label>
+            <div class="invalid-feedback">Check this box so an agent can contact you.</div>
+          </div>
+        </div>
+        <p class="lead-call">Prefer to talk? Call <a href="tel:+18888042592,,0">(888) 804-2592</a>. Tapping the number dials <b>0</b> for you, so you go straight to a licensed agent.</p>
+        <div id="lead-error" class="lead-error" role="alert" hidden></div>
+        <button type="submit" class="btn lead-submit" id="lead-submit">Get my free quote</button>
+      </form>
+
+      <div id="lead-next" hidden>
+        <p class="lead-intro" id="lead-next-status" role="status" aria-live="polite"></p>
+        <section class="book-call" id="book-call" aria-labelledby="book-title" hidden>
+          <h3 class="visually-hidden" id="book-title">Book your call with a licensed agent</h3>
+          <div class="book-event">
+            <div><strong>Call with a licensed agent</strong><span>One-on-one, free</span></div>
+            <div class="book-meta"><span id="book-minutes">30 min</span><span>Phone call</span></div>
+          </div>
+          <div class="book-panel">
+            <p class="book-note" id="book-status" role="status" aria-live="polite"></p>
+            <div class="book-cal" id="book-cal" hidden>
+              <h4>Select a Date &amp; Time</h4>
+              <div class="book-nav">
+                <button type="button" class="book-arrow" id="book-prev" aria-label="Previous month"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg></button>
+                <span class="book-month" id="book-month"></span>
+                <button type="button" class="book-arrow" id="book-next" aria-label="Next month"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></button>
+              </div>
+              <div class="book-grid" id="book-grid" role="group"></div>
+              <p class="book-tz">Times are Eastern Time</p>
+            </div>
+            <div class="book-times" id="book-times-wrap" hidden>
+              <h4 id="book-day"></h4>
+              <div class="book-list" id="book-times" role="group" aria-labelledby="book-day"></div>
+              <button type="button" class="book-confirm" id="book-confirm" disabled>Pick a time to book</button>
+            </div>
+            <div class="book-done" id="book-done" role="status" hidden></div>
+          </div>
+        </section>
+        <p class="lead-call">Questions? Call <a href="tel:+18888042592,,0">(888) 804-2592</a>.</p>
+      </div>
+    </div>
+  </dialog>
 
   <dialog id="recipe-modal">
     <button class="close" aria-label="Close">×</button>
@@ -134,5 +315,7 @@
 
   <script src="recipes.js"></script>
   <script src="script.js"></script>
+  <script src="leads.js"></script>
+  <script src="ads.js"></script>
 </body>
 </html>
